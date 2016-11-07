@@ -1,0 +1,57 @@
+（1）创建公钥私钥
+    1. ssh-keygen -t rsa -C "邮箱名"
+    2. 公私钥保存位置，/f/文件夹名/id_rsa
+    3. 设置密码，（两次回车）id_rsa.pub就是秘钥
+    4. github 添加秘钥，见图
+    5.验证成功: ssh -T git@github.com 回车，第一次提示输入yes/no
+
+ (2)配置一下用户名和邮箱：
+    git config –global user.name “用户名”
+    git config –global user.email “邮箱”
+             
+	 查看用户名和邮箱地址：
+	 git config user.name
+	 git config user.email
+	 修改用户名和邮箱地址：
+	 git config --global user.name "username"
+	 git config --global user.email "email"
+
+
+（3）将项目提交到github 
+     $ makdir ~/hello-world    //创建一个项目hello-world
+     $ cd ~/hello-world    //打开这个项目
+     $ git init    //初始化 
+     $ touch README
+     $ git add README   //更新README文件
+     $ git commit -m 'first commit'//提交更新，并注释信息“first commit” 
+     $ git remote add origin git@github.com:defnngj/hello-world.git   //连接远程github项目  
+	
+
+     把本地仓库推送到github
+     $ git push -u origin master     (推送的是主分支master  -u:关联远程分支，一次关联 永久受益)
+      以后提交推送：
+     $ git push origin master
+
+     error 错误
+     1.在执行
+     $ git remote add origin git@github.com:defnngj/hello-world.git
+     错误提示：fatal: remote origin already exists.
+     解决办法：
+     $ git remote rm origin
+
+     2. 在执行
+     $ git push origin master
+     错误提示：error:failed to push som refs to.......
+     解决办法：
+     git pull --rebase origin master
+
+（4）常用命令
+    （提交操作）
+	git add xxx添加到预提交文件库  （git add /f/gitRemot/remotdiv/test2.txt）
+	git commit -m "xxx"提交文件写注释  （$ git commit /f/gitRemot/remotdiv/test2.txt -m "commit"）
+	git status 查看当前状态 
+	git diff fileName 查看当前工作空间与本地库对比
+
+
+	
+ 
