@@ -42,7 +42,6 @@
      2. 在执行
      $ git push origin master
      错误提示：error:failed to push som refs to.......
-     原因：缺少  README.md
      解决办法：
      git pull --rebase origin master
 
